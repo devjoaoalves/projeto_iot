@@ -1,4 +1,9 @@
-from views import *
+import tkinter as tk
+import os
+from main import TRAIN_DIR
+from view.funcaodb import init_db
+from view.reconhecimento import treinar_modelo
+from view.interface import App
 
 # ---------------- CONFIG ---------------- #
 DB_NAME = "usuarios.db"
@@ -12,4 +17,5 @@ if __name__ == "__main__":
     init_db()
     os.makedirs(TRAIN_DIR, exist_ok=True)
     treinar_modelo()
-    root = tk.Tk(); app = App(root); root.mainloop()
+    root = tk.Tk(); app = App(root) 
+    root.mainloop()
